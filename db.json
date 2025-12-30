@@ -1,0 +1,37 @@
+{
+  "users": [
+    {
+      "id": "mjsd93l5",
+      "name": "asp",
+      "email": "xyz@gmail.com",
+      "password": "$2b$10$z0.ONsCkbdmcHbQEMxJQrOZadK6lJ85KviHDpIm9KHFZEZ5oMqKgG",
+      "verified": false,
+      "verificationCode": "579392"
+    }
+  ],
+  "postings": [
+    {
+      "id": "mjscrnjs",
+      "type": "lost",
+      "item": "dfgh",
+      "desc": "fghfdg",
+      "location": "ht",
+      "contactName": "543415",
+      "contactInfo": "asgh@gmail.com",
+      "created": 1767084973048,
+      "attachment": "uploads/8a110e7a2216983889122ff0ca4fef18"
+    },
+    {
+      "id": "mjscsv95",
+      "type": "found",
+      "item": "fdhb",
+      "desc": "fhb",
+      "location": "fdhg",
+      "contactName": "543415",
+      "contactInfo": "asgh@gmail.com",
+      "created": 1767085029689,
+      "attachment": "uploads/efd354446afbd6bee4e24311f65dc52e"
+    }
+  ],
+  "conversations": []
+}

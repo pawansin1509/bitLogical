@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Find My Stuff</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="/favicon.ico">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1>Find My Stuff</h1>
+            <p class="tag">A simple lost &amp; found hub — contact posters via messaging</p>
+            <div id="authStatus" class="auth-status"></div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="create">
+            <h2>Create a Posting</h2>
+            <form id="postForm">
+                <label>
+                    Type
+                    <select id="type" name="type" required>
+                        <option value="lost">Lost</option>
+                        <option value="found">Found</option>
+                    </select>
+                </label>
+                <label>
+                    Item name
+                    <input id="item" name="item" type="text" placeholder="e.g., Black wallet" required>
+                </label>
+                <label>
+                    Description
+                    <input id="desc" name="desc" type="text" placeholder="Short details" required>
+                </label>
+                <label>
+                    Location
+                    <input id="location" name="location" type="text" placeholder="e.g., Bus stop #12" required>
+                </label>
+                <label>
+                    Contact name
+                    <input id="contactName" name="contactName" type="text" placeholder="Your name" required>
+                </label>
+                <label>
+                    Contact info (email or phone)
+                    <input id="contactInfo" name="contactInfo" type="text" placeholder="email@example.com or +1..." required>
+                </label>
+                <label>
+                    Attachment (optional)
+                    <input id="attachment" name="attachment" type="file" accept="image/*">
+                </label>
+                <button type="submit" class="btn">Publish</button>
+            </form>
+        </section>
+
+        <section class="listings">
+            <h2>Postings</h2>
+            <div id="postings"></div>
+        </section>
+
+        <aside class="messages">
+            <h3>Account</h3>
+            <div id="authStatus" class="auth-status">Checking...</div>
+            <div style="margin-top:10px;">
+              <button id="logoutBtn" class="btn small">Log out</button>
+              <a id="authLink" class="btn small" href="/auth.html" style="margin-left:8px;">Sign in / Register</a>
+            </div>
+            <div style="margin-top:16px;">
+                <h4>Your Conversations</h4>
+                <div id="conversations"></div>
+            </div>
+            <div style="margin-top:16px;">
+                <h4>Your Postings</h4>
+                <div id="myPostings"></div>
+            </div>
+        </aside>
+    </main>
+
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <button id="closeModal" class="close">×</button>
+            <h3 id="modalTitle">Conversation</h3>
+            <div id="messagesList" class="messages-list"></div>
+            <form id="messageForm" class="message-form">
+                <input id="senderName" type="text" placeholder="Your name" required>
+                <input id="messageText" type="text" placeholder="Write a message" required>
+                <button type="submit" class="btn small">Send</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

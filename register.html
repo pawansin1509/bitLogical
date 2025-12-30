@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Register — Find My Stuff</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container auth-page">
+    <section class="create">
+      <h2>Create an account</h2>
+      <form id="regForm">
+        <label>Name<input id="regName" required></label>
+        <label>Email<input id="regEmail" type="email" required></label>
+        <label>Password<input id="regPassword" type="password" required></label>
+        <button class="btn" type="submit">Register</button>
+      </form>
+
+      <div id="verifyArea" style="display:none;margin-top:12px;">
+        <p class="muted">Enter verification code sent (demo shows code in response)</p>
+        <label>Code<input id="verifyCode"></label>
+        <button id="verifyBtn" class="btn small">Verify</button>
+      </div>
+
+      <p style="margin-top:12px;"><a href="/login.html">Already have an account? Login</a></p>
+    </section>
+  </main>
+
+  <script src="register.js"></script>
+  <script>
+    document.querySelectorAll('input').forEach(i=>i.setAttribute('autocomplete','off'));
+  </script>
+</body>
+</html>
